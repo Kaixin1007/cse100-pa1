@@ -14,10 +14,10 @@ class BSTNode {
     Data const data;  // the const Data in this node.
 
     /** TODO */
-    BSTNode(const Data& d) : data(d) {}
+    BSTNode(const Data& d) : data(d) { left = right = parent = nullptr; }
 
     /** TODO */
-    BSTNode<Data>* successor() { return 0; }
+    BSTNode<Data>* successor() { return left == nullptr ? left : nullptr; }
 };
 
 /** DO NOT CHANGE THIS METHOD
