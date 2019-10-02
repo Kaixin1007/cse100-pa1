@@ -43,6 +43,7 @@ class SmallBSTFixture : public ::testing::Test {
         // initialization code here
         vector<int> input{3, 4, 1, 100, -33};
         insertIntoBST(input, bst);
+        ASSERT_NE(bst.find(3), bst.end());
     }
     // code in SetUp() will execute just before the test ensues
     // void SetUp() {}
