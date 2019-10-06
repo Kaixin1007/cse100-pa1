@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - Code coverage - bst/BSTIterator.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">bst</a> - BSTIterator.hpp<span style="font-size: 80%;"> (source / <a href="BSTIterator.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">Code coverage</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntryHi">92.3 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-10-02 03:49:38</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntryLo">45.5 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+            | Branches:
+            <span class="coverLegendCov">+</span> taken
+            <span class="coverLegendNoCov">-</span> not taken
+            <span class="coverLegendNoCov">#</span> not executed
+</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : #ifndef BSTITERATOR_HPP</a>
+<span class="lineNum">       2 </span>                :            : #define BSTITERATOR_HPP
+<span class="lineNum">       3 </span>                :            : #include &lt;iterator&gt;
+<span class="lineNum">       4 </span>                :            : #include &lt;list&gt;
+<span class="lineNum">       5 </span>                :            : #include &quot;BSTNode.hpp&quot;
+<span class="lineNum">       6 </span>                :            : using namespace std;
+<span class="lineNum">       7 </span>                :            : 
+<span class="lineNum">       8 </span>                :            : template &lt;typename Data&gt;
+<span class="lineNum">       9 </span>                :            : class BSTIterator : public iterator&lt;input_iterator_tag, Data&gt; {
+<span class="lineNum">      10 </span>                :            :   private:
+<span class="lineNum">      11 </span>                :            :     BSTNode&lt;Data&gt;* curr;
+<span class="lineNum">      12 </span>                :            : 
+<span class="lineNum">      13 </span>                :            :   public:
+<span class="lineNum">      14 </span>                :            :     /** Constructor that initialize the current BSTNode
+<a name="15"><span class="lineNum">      15 </span>                :            :      *  in this BSTIterator.</a>
+<span class="lineNum">      16 </span>                :            :      */
+<span class="lineNum">      17 </span>                :<span class="lineCov">         10 :     BSTIterator(BSTNode&lt;Data&gt;* curr) : curr(curr) {}</span>
+<a name="18"><span class="lineNum">      18 </span>                :            : </a>
+<span class="lineNum">      19 </span>                :            :     /** Dereference operator. */
+<span class="lineNum">      20 </span>                :<span class="lineNoCov">          0 :     Data operator*() const { return curr-&gt;data; }</span>
+<a name="21"><span class="lineNum">      21 </span>                :            : </a>
+<span class="lineNum">      22 </span>                :            :     /** Pre-increment operator. */
+<span class="lineNum">      23 </span>                :<span class="lineCov">          1 :     BSTIterator&lt;Data&gt;&amp; operator++() {</span>
+<span class="lineNum">      24 </span>                :<span class="lineCov">          1 :         curr = curr-&gt;successor();</span>
+<span class="lineNum">      25 </span>                :<span class="lineCov">          1 :         return *this;</span>
+<span class="lineNum">      26 </span>                :            :     }
+<a name="27"><span class="lineNum">      27 </span>                :            : </a>
+<span class="lineNum">      28 </span>                :            :     /** Post-increment operator. */
+<span class="lineNum">      29 </span>                :<span class="lineCov">          1 :     BSTIterator&lt;Data&gt; operator++(int) {</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">          1 :         BSTIterator before = BSTIterator(curr);</span>
+<span class="lineNum">      31 </span>        [<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">          1 :         ++(*this);</span>
+<span class="lineNum">      32 </span>                :<span class="lineCov">          1 :         return before;</span>
+<span class="lineNum">      33 </span>                :            :     }
+<a name="34"><span class="lineNum">      34 </span>                :            : </a>
+<span class="lineNum">      35 </span>                :            :     /** TODO */
+<span class="lineNum">      36 </span>                :<span class="lineCov">          1 :     bool operator==(BSTIterator&lt;Data&gt; const&amp; other) const {</span>
+<span class="lineNum">      37 </span>                :<span class="lineCov">          1 :         return curr == other.curr;</span>
+<span class="lineNum">      38 </span>                :            :     }
+<a name="39"><span class="lineNum">      39 </span>                :            : </a>
+<span class="lineNum">      40 </span>                :            :     /** TODO */
+<span class="lineNum">      41 </span>                :<span class="lineCov">          4 :     bool operator!=(BSTIterator&lt;Data&gt; const&amp; other) const {</span>
+<span class="lineNum">      42 </span>                :<span class="lineCov">          4 :         return curr != other.curr;</span>
+<span class="lineNum">      43 </span>                :            :     }
+<span class="lineNum">      44 </span>                :            : };
+<span class="lineNum">      45 </span>                :            : 
+<span class="lineNum">      46 </span>                :            : #endif  // BSTITERATOR_HPP
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
