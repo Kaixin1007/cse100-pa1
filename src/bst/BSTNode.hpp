@@ -17,7 +17,30 @@ class BSTNode {
     BSTNode(const Data& d) : data(d) { left = right = parent = nullptr; }
 
     /** TODO */
-    BSTNode<Data>* successor() { return left == nullptr ? left : nullptr; }
+    BSTNode<Data>* successor() {
+        if (parent == nullptr)
+            return nullptr;
+
+        else if (right == nullptr) {
+            return rightBranch(parent);
+        } else
+            minNode(right);
+    }
+
+  private:
+    BSTNode<Data>* minNode(BSTNode<Data>* x1) {
+        BSTNode<Data>* temp = x1;
+        while (temp->left != nullptr) temp = temp->left;
+        return temp;
+    }
+    BSTNode<Data>* rightBranch(BSTNode<Data>* x1) {
+        BSTNode<Data>* temp = x1;
+        while (x1->parent != nullptr)
+            if (x1->parent->data < x1->data)
+                x1 = x1->parent;
+            else
+                break;
+    }
 };
 
 /** DO NOT CHANGE THIS METHOD

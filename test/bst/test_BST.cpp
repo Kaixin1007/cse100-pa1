@@ -43,7 +43,6 @@ class SmallBSTFixture : public ::testing::Test {
         // initialization code here
         vector<int> input{3, 4, 1, 100, -33};
         insertIntoBST(input, bst);
-        ASSERT_NE(bst.find(3), bst.end());
     }
     // code in SetUp() will execute just before the test ensues
     // void SetUp() {}
@@ -52,11 +51,20 @@ class SmallBSTFixture : public ::testing::Test {
 TEST_F(SmallBSTFixture, SMALL_SIZE_TEST) {
     // assert that the small BST has the correct size
     ASSERT_EQ(bst.size(), 5);
+    ASSERT_EQ(bst.empty(), false);
 }
 
 TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     // assert failed duplicate insertion
     ASSERT_FALSE(bst.insert(3));
+    ASSERT_NE(bst.end(), bst.find(3));
+    ASSERT_NE(bst.end(), bst.find(100));
+    ASSERT_NE(bst.end(), bst.begin());
 }
+TEST_F(SmallBSTFixture, INORDER_TEST) {
+    vector<int> test{-33, 1, 3, 4, 100};
+    ASSERT_EQ(bst.inorder(), test);
+}
+TEST_F(SmallBSTFixture, FIRST_TEST) {}
 
 // TODO: add more BST tests here

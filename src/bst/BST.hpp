@@ -1,5 +1,6 @@
 #ifndef BST_HPP
 #define BST_HPP
+#include <math.h>
 #include <iostream>
 #include <vector>
 #include "BSTIterator.hpp"
@@ -31,19 +32,21 @@ class BST {
     virtual ~BST() { deleteAll(root); }
 
     /** TODO */
-    virtual bool insert(const Data& item) { return false; }
+    virtual bool insert(const Data& item) {
+        return insert(&root, item, nullptr);
+    }
 
     /** TODO */
-    virtual iterator find(const Data& item) const { return 0; }
+    virtual iterator find(const Data& item) const { return find(root, item); }
 
     /** TODO */
-    unsigned int size() const { return 0; }
+    unsigned int size() const { return isize; }
 
     /** TODO */
-    int height() const { return 0; }
+    int height() const { return iheight; }
 
     /** TODO */
-    bool empty() const { return false; }
+    bool empty() const { return !(isize > 0); }
 
     /** TODO */
     iterator begin() const { return BST::iterator(first(root)); }
@@ -53,14 +56,64 @@ class BST {
     iterator end() const { return typename BST<Data>::iterator(0); }
 
     /** TODO */
-    vector<Data> inorder() const {}
+    vector<Data> inorder() const {
+        vector<Data> sequences;
+        inorder(root, sequences);
+        return sequences;
+    }
 
   private:
+    void inorder(BSTNode<Data>* node, vector<Data>& seq) const {
+        if (node == nullptr) return;
+        inorder(node->left, seq);
+        seq.push_back(node->data);
+        inorder(node->right, seq);
+        // return *seq;
+    }
+    bool insert(BSTNode<Data>** point, const Data& item,
+                BSTNode<Data>* parents) {
+        BSTNode<Data>* node = *point;
+        if (*point == nullptr) {
+            *point = new BSTNode<Data>(item);
+
+            if (parents != nullptr) (*point)->parent = parents;
+
+            isize++;
+
+            if (isize == pow(2, iheight + 1)) iheight++;
+            return true;
+        }
+        if ((*point)->data < item)
+            return insert(&((*point)->right), item, *point);
+        else if (item < (*point)->data)
+            return insert(&((*point)->left), item, *point);
+        else
+            return false;
+    }
+
+    iterator find(BSTNode<Data>* root, const Data& item) const {
+        if (root == nullptr) {
+            return end();
+        } else if (root->data < item)
+            return find(root->right, item);
+        else if (item < root->data)
+            return find(root->left, item);
+        else
+            return BST::iterator(root);
+    }
     /** TODO */
-    static BSTNode<Data>* first(BSTNode<Data>* root) { return 0; }
+    static BSTNode<Data>* first(BSTNode<Data>* root) {
+        BSTNode<Data>* ptr = root;
+        if (ptr->left != nullptr) ptr = ptr->left;
+        return ptr;
+    }
 
     /** TODO */
     static void deleteAll(BSTNode<Data>* n) {
+        if (n == nullptr) return;
+        deleteAll(n->left);
+        deleteAll(n->right);
+        delete (n);
         /* Pseudocode:
            if current node is null: return;
            recursively delete left sub-tree
