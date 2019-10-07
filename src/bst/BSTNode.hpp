@@ -18,13 +18,17 @@ class BSTNode {
 
     /** TODO */
     BSTNode<Data>* successor() {
+        BSTNode<Data>* res = nullptr;
         if (parent == nullptr)
             return nullptr;
 
         else if (right == nullptr) {
-            return rightBranch(parent);
-        } else
-            minNode(right);
+            res = right;
+            while (res && res->left) res = res->left;
+        } else {
+            res = parent;
+            while (res && res->data < data) res = res->parent;
+        }
     }
 
   private:

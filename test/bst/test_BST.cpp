@@ -7,8 +7,9 @@
 
 #include <gtest/gtest.h>
 #include "BST.hpp"
+#include "BSTIterator.hpp"
+#include "BSTNode.hpp"
 #include "util.hpp"
-
 using namespace std;
 using namespace testing;
 
@@ -41,7 +42,7 @@ class SmallBSTFixture : public ::testing::Test {
   public:
     SmallBSTFixture() {
         // initialization code here
-        vector<int> input{3, 4, 1, 100, -33};
+        vector<int> input{3, 4, 1, 100, -33, 2, 50, -333};
         insertIntoBST(input, bst);
     }
     // code in SetUp() will execute just before the test ensues
@@ -50,15 +51,18 @@ class SmallBSTFixture : public ::testing::Test {
 
 TEST_F(SmallBSTFixture, SMALL_SIZE_TEST) {
     // assert that the small BST has the correct size
-    ASSERT_EQ(bst.size(), 5);
-    ASSERT_EQ(bst.height(), 2);
+    ASSERT_EQ(bst.size(), 8);
+    ASSERT_EQ(bst.height(), 3);
     ASSERT_EQ(bst.empty(), false);
 }
 
 TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     // assert failed duplicate insertion
-    cout << *(bst.begin()) << endl;
 
+    cout << *(bst.begin()) << endl;
+    // cout << (bst.begin().successorTest())->data << endl;
+    cout << "test: " << endl;
+    for (auto i = bst.begin(); i != bst.end(); ++i) cout << *i << endl;
     // cout << *(bst.find(-33)) << endl;
     ASSERT_FALSE(bst.insert(3));
     ASSERT_EQ(bst.end(), bst.find(2));

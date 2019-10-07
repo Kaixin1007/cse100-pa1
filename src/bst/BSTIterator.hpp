@@ -15,7 +15,7 @@ class BSTIterator : public iterator<input_iterator_tag, Data> {
      *  in this BSTIterator.
      */
     BSTIterator(BSTNode<Data>* curr) : curr(curr) {}
-
+    BSTNode<Data>* successorTest() { return curr->successor(); }
     /** Dereference operator. */
     Data operator*() const { return curr->data; }
 
