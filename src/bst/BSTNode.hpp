@@ -19,10 +19,8 @@ class BSTNode {
     /** TODO */
     BSTNode<Data>* successor() {
         BSTNode<Data>* res = nullptr;
-        if (parent == nullptr)
-            return nullptr;
 
-        else if (right == nullptr) {
+        if (right != nullptr) {
             res = right;
             while (res && res->left) res = res->left;
         } else {
@@ -33,7 +31,6 @@ class BSTNode {
     }
 
   private:
-   
 };
 
 /** DO NOT CHANGE THIS METHOD

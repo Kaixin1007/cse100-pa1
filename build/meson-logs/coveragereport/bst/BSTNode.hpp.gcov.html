@@ -31,18 +31,18 @@
             <td class="headerValue">Code coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntry">20</td>
-            <td class="headerCovTableEntryLo">20.0 %</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryHi">90.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-10-07 00:14:03</td>
+            <td class="headerValue">2019-10-07 18:28:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntryLo">22.2 %</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryLo">40.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">9</td>
             <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryLo">10.0 %</td>
+            <td class="headerCovTableEntryHi">90.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -92,51 +92,41 @@
 <span class="lineNum">      14 </span>                :            :     Data const data;  // the const Data in this node.
 <a name="15"><span class="lineNum">      15 </span>                :            : </a>
 <span class="lineNum">      16 </span>                :            :     /** TODO */
-<span class="lineNum">      17 </span>                :<span class="lineCov">         23 :     BSTNode(const Data&amp; d) : data(d) { left = right = parent = nullptr; }</span>
+<span class="lineNum">      17 </span>                :<span class="lineCov">         35 :     BSTNode(const Data&amp; d) : data(d) { left = right = parent = nullptr; }</span>
 <a name="18"><span class="lineNum">      18 </span>                :            : </a>
 <span class="lineNum">      19 </span>                :            :     /** TODO */
-<span class="lineNum">      20 </span>                :<span class="lineCov">          2 :     BSTNode&lt;Data&gt;* successor() {</span>
-<span class="lineNum">      21 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :         if (parent == nullptr)</span>
-<span class="lineNum">      22 </span>                :<span class="lineCov">          2 :             return nullptr;</span>
-<span class="lineNum">      23 </span>                :            : 
-<span class="lineNum">      24 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         else if (right == nullptr) {</span>
-<span class="lineNum">      25 </span>                :<span class="lineNoCov">          0 :             return rightBranch(parent);</span>
-<span class="lineNum">      26 </span>                :            :         } else
-<span class="lineNum">      27 </span>                :<span class="lineNoCov">          0 :             minNode(right);</span>
-<span class="lineNum">      28 </span>                :<span class="lineNoCov">          0 :     }</span>
-<a name="29"><span class="lineNum">      29 </span>                :            : </a>
-<span class="lineNum">      30 </span>                :            :   private:
-<span class="lineNum">      31 </span>                :<span class="lineNoCov">          0 :     BSTNode&lt;Data&gt;* minNode(BSTNode&lt;Data&gt;* x1) {</span>
-<span class="lineNum">      32 </span>                :<span class="lineNoCov">          0 :         BSTNode&lt;Data&gt;* temp = x1;</span>
-<span class="lineNum">      33 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         while (temp-&gt;left != nullptr) temp = temp-&gt;left;</span>
-<a name="34"><span class="lineNum">      34 </span>                :<span class="lineNoCov">          0 :         return temp;</span></a>
-<span class="lineNum">      35 </span>                :            :     }
-<span class="lineNum">      36 </span>                :<span class="lineNoCov">          0 :     BSTNode&lt;Data&gt;* rightBranch(BSTNode&lt;Data&gt;* x1) {</span>
-<span class="lineNum">      37 </span>                :<span class="lineNoCov">          0 :         BSTNode&lt;Data&gt;* temp = x1;</span>
-<span class="lineNum">      38 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         while (x1-&gt;parent != nullptr)</span>
-<span class="lineNum">      39 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :             if (x1-&gt;parent-&gt;data &lt; x1-&gt;data)</span>
-<span class="lineNum">      40 </span>                :<span class="lineNoCov">          0 :                 x1 = x1-&gt;parent;</span>
-<span class="lineNum">      41 </span>                :            :             else
-<span class="lineNum">      42 </span>                :<span class="lineNoCov">          0 :                 break;</span>
-<span class="lineNum">      43 </span>                :<span class="lineNoCov">          0 :     }</span>
-<span class="lineNum">      44 </span>                :            : };
-<span class="lineNum">      45 </span>                :            : 
-<span class="lineNum">      46 </span>                :            : /** DO NOT CHANGE THIS METHOD
-<span class="lineNum">      47 </span>                :            :  *  Overload operator&lt;&lt; to print a BSTNode's fields to an ostream.
-<span class="lineNum">      48 </span>                :            :  */
-<span class="lineNum">      49 </span>                :            : template &lt;typename Data&gt;
-<span class="lineNum">      50 </span>                :            : ostream&amp; operator&lt;&lt;(ostream&amp; stm, const BSTNode&lt;Data&gt;&amp; n) {
-<span class="lineNum">      51 </span>                :            :     stm &lt;&lt; '[';
-<span class="lineNum">      52 </span>                :            :     stm &lt;&lt; setw(10) &lt;&lt; &amp;n;                  // address of the BSTNode
-<span class="lineNum">      53 </span>                :            :     stm &lt;&lt; &quot;; p:&quot; &lt;&lt; setw(10) &lt;&lt; n.parent;  // address of its parent
-<span class="lineNum">      54 </span>                :            :     stm &lt;&lt; &quot;; l:&quot; &lt;&lt; setw(10) &lt;&lt; n.left;    // address of its left child
-<span class="lineNum">      55 </span>                :            :     stm &lt;&lt; &quot;; r:&quot; &lt;&lt; setw(10) &lt;&lt; n.right;   // address of its right child
-<span class="lineNum">      56 </span>                :            :     stm &lt;&lt; &quot;; d:&quot; &lt;&lt; n.data;                // its data field
-<span class="lineNum">      57 </span>                :            :     stm &lt;&lt; ']';
-<span class="lineNum">      58 </span>                :            :     return stm;
-<span class="lineNum">      59 </span>                :            : }
-<span class="lineNum">      60 </span>                :            : 
-<span class="lineNum">      61 </span>                :            : #endif  // BSTNODE_HPP
+<span class="lineNum">      20 </span>                :<span class="lineCov">         11 :     BSTNode&lt;Data&gt;* successor() {</span>
+<span class="lineNum">      21 </span>                :<span class="lineCov">         11 :         BSTNode&lt;Data&gt;* res = nullptr;</span>
+<span class="lineNum">      22 </span>                :            : 
+<span class="lineNum">      23 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         11 :         if (right != nullptr) {</span>
+<span class="lineNum">      24 </span>                :<span class="lineCov">          3 :             res = right;</span>
+<span class="lineNum">      25 </span>[<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          4 :             while (res &amp;&amp; res-&gt;left) res = res-&gt;left;</span>
+<span class="lineNum">      26 </span>                :            :         } else {
+<span class="lineNum">      27 </span>                :<span class="lineCov">          8 :             res = parent;</span>
+<span class="lineNum">      28 </span>[<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">         11 :             while (res &amp;&amp; res-&gt;data &lt; data) res = res-&gt;parent;</span>
+<span class="lineNum">      29 </span>                :            :         }
+<span class="lineNum">      30 </span>                :<span class="lineCov">         11 :         return res;</span>
+<span class="lineNum">      31 </span>                :            :     }
+<span class="lineNum">      32 </span>                :            : 
+<span class="lineNum">      33 </span>                :            :   private:
+<span class="lineNum">      34 </span>                :            : };
+<span class="lineNum">      35 </span>                :            : 
+<span class="lineNum">      36 </span>                :            : /** DO NOT CHANGE THIS METHOD
+<span class="lineNum">      37 </span>                :            :  *  Overload operator&lt;&lt; to print a BSTNode's fields to an ostream.
+<span class="lineNum">      38 </span>                :            :  */
+<span class="lineNum">      39 </span>                :            : template &lt;typename Data&gt;
+<span class="lineNum">      40 </span>                :            : ostream&amp; operator&lt;&lt;(ostream&amp; stm, const BSTNode&lt;Data&gt;&amp; n) {
+<span class="lineNum">      41 </span>                :            :     stm &lt;&lt; '[';
+<span class="lineNum">      42 </span>                :            :     stm &lt;&lt; setw(10) &lt;&lt; &amp;n;                  // address of the BSTNode
+<span class="lineNum">      43 </span>                :            :     stm &lt;&lt; &quot;; p:&quot; &lt;&lt; setw(10) &lt;&lt; n.parent;  // address of its parent
+<span class="lineNum">      44 </span>                :            :     stm &lt;&lt; &quot;; l:&quot; &lt;&lt; setw(10) &lt;&lt; n.left;    // address of its left child
+<span class="lineNum">      45 </span>                :            :     stm &lt;&lt; &quot;; r:&quot; &lt;&lt; setw(10) &lt;&lt; n.right;   // address of its right child
+<span class="lineNum">      46 </span>                :            :     stm &lt;&lt; &quot;; d:&quot; &lt;&lt; n.data;                // its data field
+<span class="lineNum">      47 </span>                :            :     stm &lt;&lt; ']';
+<span class="lineNum">      48 </span>                :            :     return stm;
+<span class="lineNum">      49 </span>                :            : }
+<span class="lineNum">      50 </span>                :            : 
+<span class="lineNum">      51 </span>                :            : #endif  // BSTNODE_HPP
 </pre>
       </td>
     </tr>

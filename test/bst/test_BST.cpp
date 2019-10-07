@@ -62,7 +62,9 @@ TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     cout << *(bst.begin()) << endl;
     // cout << (bst.begin().successorTest())->data << endl;
     cout << "test: " << endl;
-    // for (auto i = bst.begin(); i == bst.end(); ++i) cout << *i << endl;
+    auto i = bst.begin();
+    ++i;
+    for (auto i = bst.begin(); i != bst.end(); ++i) cout << *i << endl;
     // cout << *(bst.find(-33)) << endl;
     ASSERT_FALSE(bst.insert(3));
     ASSERT_NE(bst.end(), bst.find(2));
