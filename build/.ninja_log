@@ -63,3 +63,15 @@
 158	7008	1570473761772978300	test/bst/a6648a1@@test_BSTNode.cpp.executable@exe/test_BSTNode.cpp.o	c83419830414319b
 100	10884	1570474042089132700	test/bst/a6648a1@@test_BST.cpp.executable@exe/test_BST.cpp.o	5cd6ab7c7eaac2f9
 10907	15240	1570474046454873700	test/bst/test_BST.cpp.executable	e1b16848fce0d5f
+58	1881	1570474149440300300	test/bst/a6648a1@@main.cpp.executable@exe/main.cpp.o	e0ee8c9da70d8dba
+1887	2327	1570474149879446700	test/bst/main.cpp.executable	3692e9b158e4a2d7
+60	7659	1570474155216503400	test/bst/a6648a1@@test_BSTIterator.cpp.executable@exe/test_BSTIterator.cpp.o	50b439606eb86a87
+2329	9964	1570474157520802000	test/bst/a6648a1@@test_BSTNode.cpp.executable@exe/test_BSTNode.cpp.o	c83419830414319b
+9969	13495	1570474161034482300	test/bst/test_BSTNode.cpp.executable	8238f50eda931905
+13499	17362	1570474164898396800	test/bst/test_BSTIterator.cpp.executable	db1f9b0c57abc01b
+7665	20444	1570474167996730300	test/bst/a6648a1@@test_BST.cpp.executable@exe/test_BST.cpp.o	5cd6ab7c7eaac2f9
+20455	25140	1570474172686935600	test/bst/test_BST.cpp.executable	e1b16848fce0d5f
+17366	28959	1570474176513055100	test/kdt/f0c3ac4@@test_Point.cpp.executable@exe/test_Point.cpp.o	e459ccb3c85cd118
+28965	33435	1570474180970404800	test/kdt/test_Point.cpp.executable	232ace9df7ccbdb
+25143	36654	1570474184208575600	test/kdt/f0c3ac4@@test_KDT.cpp.executable@exe/test_KDT.cpp.o	db677a8395905c60
+36662	40044	1570474187581634300	test/kdt/test_KDT.cpp.executable	7cb744fd95296e95
