@@ -113,6 +113,7 @@ class BST {
     /** TODO */
     static BSTNode<Data>* first(BSTNode<Data>* root) {
         BSTNode<Data>* ptr = root;
+        if (root == nullptr) return nullptr;
         while (ptr->left != nullptr) ptr = ptr->left;
         return ptr;
     }

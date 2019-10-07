@@ -55,3 +55,11 @@
 140766	146284	1570472872956833400	test/kdt/f0c3ac4@@test_KDT.cpp.executable@exe/.._.._subprojects_googletest-release-1.8.1_googletest_src_gtest_main.cc.o	a52ac9b42aaf30e5
 146290	148912	1570472875583431600	test/kdt/test_KDT.cpp.executable	7cb744fd95296e95
 1	207099	0	meson-cov	a78d668ed537216
+55	7717	1570473572110743200	test/bst/a6648a1@@test_BST.cpp.executable@exe/test_BST.cpp.o	5cd6ab7c7eaac2f9
+7726	11011	1570473575398849200	test/bst/test_BST.cpp.executable	e1b16848fce0d5f
+64	9972	1570473660920869300	test/bst/a6648a1@@test_BST.cpp.executable@exe/test_BST.cpp.o	5cd6ab7c7eaac2f9
+9980	14387	1570473665315805100	test/bst/test_BST.cpp.executable	e1b16848fce0d5f
+69	8202	1570473736157795900	test/bst/a6648a1@@test_BSTIterator.cpp.executable@exe/test_BSTIterator.cpp.o	50b439606eb86a87
+158	7008	1570473761772978300	test/bst/a6648a1@@test_BSTNode.cpp.executable@exe/test_BSTNode.cpp.o	c83419830414319b
+100	10884	1570474042089132700	test/bst/a6648a1@@test_BST.cpp.executable@exe/test_BST.cpp.o	5cd6ab7c7eaac2f9
+10907	15240	1570474046454873700	test/bst/test_BST.cpp.executable	e1b16848fce0d5f
