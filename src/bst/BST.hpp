@@ -43,7 +43,7 @@ class BST {
     unsigned int size() const { return isize; }
 
     /** TODO */
-    int height() const { return iheight; }
+    int height() const { return height(root) - 1; }
 
     /** TODO */
     bool empty() const { return !(isize > 0); }
@@ -63,6 +63,15 @@ class BST {
     }
 
   private:
+    int height(BSTNode<Data>* node) const {
+        if (node == nullptr) return 0;
+        int lheight = height(node->left);
+        int rheight = height(node->right);
+        if (lheight > rheight)
+            return lheight + 1;
+        else
+            return rheight + 1;
+    }
     void inorder(BSTNode<Data>* node, vector<Data>& seq) const {
         if (node == nullptr) return;
         inorder(node->left, seq);
@@ -80,7 +89,7 @@ class BST {
 
             isize++;
 
-            if (isize == pow(2, iheight + 1)) iheight++;
+            // if (isize == pow(2, iheight + 1)) iheight++;
             return true;
         }
         if ((*point)->data < item)
@@ -104,7 +113,7 @@ class BST {
     /** TODO */
     static BSTNode<Data>* first(BSTNode<Data>* root) {
         BSTNode<Data>* ptr = root;
-        if (ptr->left != nullptr) ptr = ptr->left;
+        while (ptr->left != nullptr) ptr = ptr->left;
         return ptr;
     }
 

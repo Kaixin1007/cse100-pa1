@@ -51,15 +51,22 @@ class SmallBSTFixture : public ::testing::Test {
 TEST_F(SmallBSTFixture, SMALL_SIZE_TEST) {
     // assert that the small BST has the correct size
     ASSERT_EQ(bst.size(), 5);
+    ASSERT_EQ(bst.height(), 2);
     ASSERT_EQ(bst.empty(), false);
 }
 
 TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     // assert failed duplicate insertion
+    cout << *(bst.begin()) << endl;
+
+    // cout << *(bst.find(-33)) << endl;
     ASSERT_FALSE(bst.insert(3));
-    ASSERT_NE(bst.end(), bst.find(3));
+    ASSERT_EQ(bst.end(), bst.find(2));
     ASSERT_NE(bst.end(), bst.find(100));
+    ASSERT_NE(bst.end(), bst.find(-33));
+    ASSERT_NE(bst.end(), bst.find(3));
     ASSERT_NE(bst.end(), bst.begin());
+    ASSERT_TRUE(bst.insert(22));
 }
 TEST_F(SmallBSTFixture, INORDER_TEST) {
     vector<int> test{-33, 1, 3, 4, 100};
