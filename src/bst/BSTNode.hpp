@@ -29,22 +29,11 @@ class BSTNode {
             res = parent;
             while (res && res->data < data) res = res->parent;
         }
+        return res;
     }
 
   private:
-    BSTNode<Data>* minNode(BSTNode<Data>* x1) {
-        BSTNode<Data>* temp = x1;
-        while (temp->left != nullptr) temp = temp->left;
-        return temp;
-    }
-    BSTNode<Data>* rightBranch(BSTNode<Data>* x1) {
-        BSTNode<Data>* temp = x1;
-        while (x1->parent != nullptr)
-            if (x1->parent->data < x1->data)
-                x1 = x1->parent;
-            else
-                break;
-    }
+   
 };
 
 /** DO NOT CHANGE THIS METHOD

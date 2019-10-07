@@ -62,10 +62,10 @@ TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     cout << *(bst.begin()) << endl;
     // cout << (bst.begin().successorTest())->data << endl;
     cout << "test: " << endl;
-    for (auto i = bst.begin(); i != bst.end(); ++i) cout << *i << endl;
+    // for (auto i = bst.begin(); i == bst.end(); ++i) cout << *i << endl;
     // cout << *(bst.find(-33)) << endl;
     ASSERT_FALSE(bst.insert(3));
-    ASSERT_EQ(bst.end(), bst.find(2));
+    ASSERT_NE(bst.end(), bst.find(2));
     ASSERT_NE(bst.end(), bst.find(100));
     ASSERT_NE(bst.end(), bst.find(-33));
     ASSERT_NE(bst.end(), bst.find(3));
@@ -73,7 +73,7 @@ TEST_F(SmallBSTFixture, SMALL_INSERT_DUPLICATES_TEST) {
     ASSERT_TRUE(bst.insert(22));
 }
 TEST_F(SmallBSTFixture, INORDER_TEST) {
-    vector<int> test{-33, 1, 3, 4, 100};
+    vector<int> test{-333, -33, 1, 2, 3, 4, 50, 100};
     ASSERT_EQ(bst.inorder(), test);
 }
 TEST_F(SmallBSTFixture, FIRST_TEST) {}
