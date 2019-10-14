@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-10-07 18:28:49</td>
+            <td class="headerValue">2019-10-10 06:15:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -95,17 +95,17 @@
 <span class="lineNum">      17 </span>                :<span class="lineCov">         35 :     BSTNode(const Data&amp; d) : data(d) { left = right = parent = nullptr; }</span>
 <a name="18"><span class="lineNum">      18 </span>                :            : </a>
 <span class="lineNum">      19 </span>                :            :     /** TODO */
-<span class="lineNum">      20 </span>                :<span class="lineCov">         11 :     BSTNode&lt;Data&gt;* successor() {</span>
-<span class="lineNum">      21 </span>                :<span class="lineCov">         11 :         BSTNode&lt;Data&gt;* res = nullptr;</span>
+<span class="lineNum">      20 </span>                :<span class="lineCov">         10 :     BSTNode&lt;Data&gt;* successor() {</span>
+<span class="lineNum">      21 </span>                :<span class="lineCov">         10 :         BSTNode&lt;Data&gt;* res = nullptr;</span>
 <span class="lineNum">      22 </span>                :            : 
-<span class="lineNum">      23 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         11 :         if (right != nullptr) {</span>
+<span class="lineNum">      23 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">         10 :         if (right != nullptr) {</span>
 <span class="lineNum">      24 </span>                :<span class="lineCov">          3 :             res = right;</span>
 <span class="lineNum">      25 </span>[<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          4 :             while (res &amp;&amp; res-&gt;left) res = res-&gt;left;</span>
 <span class="lineNum">      26 </span>                :            :         } else {
-<span class="lineNum">      27 </span>                :<span class="lineCov">          8 :             res = parent;</span>
-<span class="lineNum">      28 </span>[<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">         11 :             while (res &amp;&amp; res-&gt;data &lt; data) res = res-&gt;parent;</span>
+<span class="lineNum">      27 </span>                :<span class="lineCov">          7 :             res = parent;</span>
+<span class="lineNum">      28 </span>[<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span>]:<span class="lineCov">         10 :             while (res &amp;&amp; res-&gt;data &lt; data) res = res-&gt;parent;</span>
 <span class="lineNum">      29 </span>                :            :         }
-<span class="lineNum">      30 </span>                :<span class="lineCov">         11 :         return res;</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">         10 :         return res;</span>
 <span class="lineNum">      31 </span>                :            :     }
 <span class="lineNum">      32 </span>                :            : 
 <span class="lineNum">      33 </span>                :            :   private:

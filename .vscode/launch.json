@@ -9,7 +9,10 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${relativeFile}.executable",
-            "args": [],
+            "args": [
+                "data/smallBuild.txt",
+                "data/smallQuery.txt"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -31,7 +34,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/test/bst/main.cpp.executable",
             "args": [
-                "data/actors.txt"
+                "data/smallBuild.txt",
+                "data/smallQuery.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
