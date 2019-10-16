@@ -27,3 +27,5 @@
 3307	9818	1570687880396707200	test/bst/a6648a1@@test_BSTIterator.cpp.executable@exe/test_BSTIterator.cpp.o	50b439606eb86a87
 13	5974	1571203213892907500	test/kdt/f0c3ac4@@efficiencyTest.cpp.executable@exe/efficiencyTest.cpp.o	fc98b9872dbd9f75
 5981	7285	1571203215202379100	test/kdt/efficiencyTest.cpp.executable	629dfdeaa31fbcee
+14	4394	1571204863043392600	test/kdt/f0c3ac4@@efficiencyTest.cpp.executable@exe/efficiencyTest.cpp.o	fc98b9872dbd9f75
+4401	5366	1571204864014512100	test/kdt/efficiencyTest.cpp.executable	629dfdeaa31fbcee

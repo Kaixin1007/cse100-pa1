@@ -54,7 +54,7 @@ vector<pair<double, double>> rangeRange(unsigned int numDim, int length,
 
 /** Test the efficiency of kd tree by comparing the runtime to naive search */
 int main() {
-    const int NUM_DATA = 500;    // number of random Build data
+    const int NUM_DATA = 50;     // number of random Build data
     const int NUM_TEST = 10;     // number of tests
     const int NUM_DIM = 3;       // number of dimension of random data
     const double MIN_VAL = 0;    // lower bound of random data features
