@@ -57,6 +57,12 @@ class KDT {
 
     /** TODO */
     void build(vector<Point>& points) {
+        numDim = points[0].numDim;
+        int median = floor((0 + points.size()) / 2);
+        for (int i = 0; i < numDim; i++) {
+            boundingBox.push_back(make_pair(points[median].features[i],
+                                            points[median].features[i]));
+        }
         root = buildSubtree(points, 0, points.size(), 0, iheight);
     }
 
@@ -70,10 +76,10 @@ class KDT {
     /** Extra credit */
     vector<Point> rangeSearch(vector<pair<double, double>>& queryRegion) {
         pointsInRange.clear();
-
+        rangeSearchHelper(root, boundingBox, queryRegion, 0);
         return pointsInRange;
     }
-
+    vector<pair<double, double>> getboundingBox() { return boundingBox; }
     /** TODO */
     unsigned int size() const { return isize; }
 
@@ -88,6 +94,7 @@ class KDT {
         if (F.size() == 1) {
             isize++;
             if (iheight < height) iheight = height;
+            updateBB(F[0]);
             return new KDNode(F[0]);
         }
         sort(F.begin(), F.end(), CompareValueAt(curDim));
@@ -101,7 +108,10 @@ class KDT {
         KDNode* node = new KDNode(F[median]);
         node->left = leftSub;
         node->right = rightSub;
+        updateBB(node->point);
+
         isize++;
+
         return node;
     }
 
@@ -173,29 +183,84 @@ class KDT {
     void rangeSearchHelper(KDNode* node, vector<pair<double, double>>& curBB,
                            vector<pair<double, double>>& queryRegion,
                            unsigned int curDim) {
+        pair<double, double> cur_left, cur_right;
         if (curBB[curDim].first > queryRegion[curDim].second ||
             curBB[curDim].second < queryRegion[curDim].first) {
             // disjoint
             return;
 
-        } else if (curBB[curDim].first > queryRegion[curDim].first &&
-                   curBB[curDim].second < queryRegion[curDim].second) {
-            // subset
-        }
+        } else {
+            // leaf point
+            if (node->left == nullptr && node->right == nullptr) {
+                if (checkNode(node->point, queryRegion))
+                    pointsInRange.push_back(node->point);
+                return;
+            }
+            // boundingBox is in the queryRegion
+            if (curBB[curDim].first >= queryRegion[curDim].first &&
+                curBB[curDim].second <= queryRegion[curDim].second) {
+                if (checkBox(curBB, queryRegion)) {
+                    getSubtree(node);
+                    return;
+                }
+                cur_left = cur_right = curBB[curDim];
+            } else {
+                // intersect
+                cur_left.first = curBB[curDim].first;
+                cur_left.second = cur_right.first =
+                    node->point.features[curDim];
+                cur_right.second = curBB[curDim].second;
+            }
 
-        else {
-            // intersect
+            if (node->left != nullptr) {
+                curBB[curDim] = cur_left;
+                rangeSearchHelper(node->left, curBB, queryRegion,
+                                  (curDim + 1) % queryRegion.size());
+            }
+            if (node->right != nullptr) {
+                curBB[curDim] = cur_right;
+                rangeSearchHelper(node->right, curBB, queryRegion,
+                                  (curDim + 1) % queryRegion.size());
+            }
+            if (checkNode(node->point, queryRegion))
+                pointsInRange.push_back(node->point);
             return;
         }
         return;
     }
+    // check Node in queryRegion
+    bool checkNode(Point node, vector<pair<double, double>>& queryRegion) {
+        for (unsigned int i = 0; i < queryRegion.size(); i++) {
+            if (!(node.features[i] <= queryRegion[i].second &&
+                  node.features[i] >= queryRegion[i].first))
+                return false;
+        }
+        return true;
+    }
+    bool checkBox(vector<pair<double, double>>& curBB,
+                  vector<pair<double, double>>& queryRegion) {
+        for (unsigned int i = 0; i < queryRegion.size(); i++) {
+            if (!(curBB[i].second <= queryRegion[i].second &&
+                  curBB[i].first >= queryRegion[i].first))
+                return false;
+        }
+        return true;
+    }
+    // get subtree node
+    void getSubtree(KDNode* node) {
+        if (node->left != nullptr) getSubtree(node->left);
+        if (node->right != nullptr) getSubtree(node->right);
 
-    void outPutSubtree(KDNode* node){
-        if(node == nullptr)
-            return;
-        outPutSubtree(node->left);
-        outPutSubtree(node->right);
         pointsInRange.push_back(node->point);
+    }
+    // update BoundingBox
+    void updateBB(Point point) {
+        for (int i = 0; i < numDim; i++) {
+            if ((point.features[i] > boundingBox[i].second))
+                boundingBox[i].second = (point.features[i]);
+            else if ((point.features[i] < boundingBox[i].first))
+                boundingBox[i].first = (point.features[i]);
+        }
     }
 };
 #endif  // KDT_HPP

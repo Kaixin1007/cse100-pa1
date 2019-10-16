@@ -25,6 +25,9 @@ class SmallKDTFixture : public ::testing::Test {
     KDT kdt;
 
   public:
+    //                (3.2,1.0)
+    //       (1,0,3,2)         (5.7,3.2)
+    //   (1.8,1.9)           (4.4,2.2)
     SmallKDTFixture() {
         vec.emplace_back(Point({1.0, 3.2}));
         vec.emplace_back(Point({3.2, 1.0}));
@@ -58,8 +61,23 @@ TEST_F(SmallKDTFixture, TEST_NEAREST_POINT) {
     ASSERT_EQ(*kdt.findNearestNeighbor(queryPoint1), *closestPoint);
     closestPoint = naiveSearch.findNearestNeighbor(queryPoint2);
     ASSERT_EQ(*kdt.findNearestNeighbor(queryPoint2), *closestPoint);
+
+    vector<pair<double, double>> point;
+    point.push_back(make_pair(2, 5.8));
+    point.push_back(make_pair(0.8, 3.2));
+    vector<Point> range0 = naiveSearch.rangeSearch(point);
+    vector<Point> range1 = kdt.rangeSearch(point);
+    ASSERT_EQ(range0, range1);
+    cout << "success!" << endl;
 }
-TEST_F(SmallKDTFixture, TIME_TEST) {}
+TEST_F(SmallKDTFixture, TIME_TEST) {
+    // vector<pair<double, double>> test = kdt.getboundingBox();
+    // cout << "first" << endl;
+    // cout << test[0].first << "---" << test[0].second << endl;
+    // cout << "second" << endl;
+    // cout << test[1].first << "---" << test[1].second << endl;
+    // cout << "end" << endl;
+}
 TEST_F(SmallKDTFixture, POINT_TEST) {
     Point queryPoint1({5.81, 3.21});
     Point queryPoint2({5.81, 3.21});

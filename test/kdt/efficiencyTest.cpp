@@ -54,7 +54,7 @@ vector<pair<double, double>> rangeRange(unsigned int numDim, int length,
 
 /** Test the efficiency of kd tree by comparing the runtime to naive search */
 int main() {
-    const int NUM_DATA = 50000;  // number of random Build data
+    const int NUM_DATA = 500;    // number of random Build data
     const int NUM_TEST = 10;     // number of tests
     const int NUM_DIM = 3;       // number of dimension of random data
     const double MIN_VAL = 0;    // lower bound of random data features
@@ -79,25 +79,25 @@ int main() {
     Timer t;
     long long sumTime = 0;
 
-    cout << "\nTest 1: nearest neighbor search" << endl << endl;
-    cout << "\tQuery points size: " << NUM_TEST << ";" << endl << endl;
+    // cout << "\nTest 1: nearest neighbor search" << endl << endl;
+    // cout << "\tQuery points size: " << NUM_TEST << ";" << endl << endl;
 
-    cout << "\tTiming KD tree..." << endl;
+    // cout << "\tTiming KD tree..." << endl;
 
-    t.begin_timer();
-    for (Point& p : testData) {
-        kdtree.findNearestNeighbor(p);
-    }
-    sumTime = t.end_timer();
-    cout << "\tTime taken: " << sumTime << " nanoseconds\n" << endl;
+    // t.begin_timer();
+    // for (Point& p : testData) {
+    //     kdtree.findNearestNeighbor(p);
+    // }
+    // sumTime = t.end_timer();
+    // cout << "\tTime taken: " << sumTime << " nanoseconds\n" << endl;
 
-    cout << "\tTiming naive search..." << endl;
-    t.begin_timer();
-    for (Point& p : testData) {
-        naiveSearch.findNearestNeighbor(p);
-    }
-    sumTime = t.end_timer();
-    cout << "\tTime taken: " << sumTime << " nanoseconds\n" << endl;
+    // cout << "\tTiming naive search..." << endl;
+    // t.begin_timer();
+    // for (Point& p : testData) {
+    //     naiveSearch.findNearestNeighbor(p);
+    // }
+    // sumTime = t.end_timer();
+    // cout << "\tTime taken: " << sumTime << " nanoseconds\n" << endl;
 
     cout << "Test 2: range search (EC)" << endl << endl;
     cout << "\tQuery range size: " << NUM_TEST
