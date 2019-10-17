@@ -38,3 +38,9 @@
 14693	24047	1571272080850318300	test/kdt/f0c3ac4@@test_Point.cpp.executable@exe/test_Point.cpp.o	e459ccb3c85cd118
 24056	27925	1571272084714281000	test/kdt/test_Point.cpp.executable	232ace9df7ccbdb
 27928	32848	0	meson-test	a85f1c56d359de93
+74	10195	1571272421806476500	test/kdt/f0c3ac4@@test_KDT.cpp.executable@exe/test_KDT.cpp.o	db677a8395905c60
+10202	19979	1571272431577396200	test/kdt/test_KDT.cpp.executable	7cb744fd95296e95
+160	12233	1571272521349121900	test/kdt/f0c3ac4@@test_KDT.cpp.executable@exe/test_KDT.cpp.o	db677a8395905c60
+12242	22479	1571272531593212300	test/kdt/test_KDT.cpp.executable	7cb744fd95296e95
+109	12594	1571272576686438000	test/kdt/f0c3ac4@@test_KDT.cpp.executable@exe/test_KDT.cpp.o	db677a8395905c60
+12599	22736	1571272586820430100	test/kdt/test_KDT.cpp.executable	7cb744fd95296e95

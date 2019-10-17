@@ -108,7 +108,7 @@ TEST_F(SmallKDTFixture, TEST_NEAREST_POINT) {
 }
 TEST_F(SmallKDTFixture, RANGE_SEARCH) {
     const int NUM_DATA = 100;    // number of random Build data
-    const int NUM_TEST = 10;     // number of tests
+    const int NUM_TEST = 500;    // number of tests
     const int NUM_DIM = 3;       // number of dimension of random data
     const double MIN_VAL = 0;    // lower bound of random data features
     const double MAX_VAL = 10;   // upper bound of random data features
@@ -128,13 +128,14 @@ TEST_F(SmallKDTFixture, RANGE_SEARCH) {
         vector<Point> range1 = naiveSearch.rangeSearch(range);
         vector<Point> range0 = kdtree.rangeSearch(range);
 
-        cout << "kdtree:";
-        for (int i = 0; i < range0.size(); i++) cout << range0[i];
-        cout << endl;
-        cout << "naiveSearch:";
-        for (int i = 0; i < range1.size(); i++) cout << range1[i];
-        cout << endl;
-        cout << "----------------------------------" << endl;
+        // cout << "kdtree:";
+        // for (int i = 0; i < range0.size(); i++) cout << range0[i];
+        // cout << endl;
+        // cout << "naiveSearch:";
+        // for (int i = 0; i < range1.size(); i++) cout << range1[i];
+        // cout << endl;
+        // cout << "----------------------------------" << endl;
+        ASSERT_EQ(range1.size(), range0.size());
     }
 
     cout << "end!" << endl;
