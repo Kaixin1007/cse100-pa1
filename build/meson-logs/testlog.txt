@@ -1,8 +1,8 @@
-Log of Meson test suite run on 2019-10-16T03:38:19.124653
+Log of Meson test suite run on 2019-10-17T00:28:07.777009
 
-Inherited environment: MANPATH='/opt/rh/llvm-toolset-7/root/usr/share/man:/opt/rh/devtoolset-7/root/usr/share/man:' HOSTNAME='cc18ebd97d5f' TERM_PROGRAM='vscode' SHELL='/bin/bash' TERM='xterm-256color' AMD_ENTRYPOINT='vs/server/remoteExtensionHostProcess' PERL5LIB='/opt/rh/devtoolset-7/root//usr/lib64/perl5/vendor_perl:/opt/rh/devtoolset-7/root/usr/lib/perl5:/opt/rh/devtoolset-7/root//usr/share/perl5/vendor_perl' TERM_PROGRAM_VERSION='1.39.1' X_SCLS='llvm-toolset-7 devtoolset-7 ' PCP_DIR='/opt/rh/devtoolset-7/root' LS_COLORS='rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:' LD_LIBRARY_PATH='/opt/rh/llvm-toolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib:/opt/rh/devtoolset-7/root/usr/lib64/dyninst:/opt/rh/devtoolset-7/root/usr/lib/dyninst:/opt/rh/devtoolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib' PATH='/opt/rh/llvm-toolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/sbin:/opt/rh/devtoolset-7/root/usr/bin:/root/.vscode-server/bin/88f15d17dca836346e787762685a40bb5cce75a8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' _='/usr/local/bin/meson' PWD='/Code/cse100_pa1/build' LANG='en_US.UTF-8' SHLVL='3' HOME='/root' PIPE_LOGGING='true' APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL='true' PYTHONPATH='/opt/rh/llvm-toolset-7/root/usr/lib/python2.7/site-packages:/opt/rh/devtoolset-7/root/usr/lib64/python2.7/site-packages:/opt/rh/devtoolset-7/root/usr/lib/python2.7/site-packages' CVS_RSH='ssh' VSCODE_IPC_HOOK_CLI='/tmp/vscode-ipc-6ae6e5bf-f2ea-4e3b-946e-da939f095378.sock' LESSOPEN='||/usr/bin/lesspipe.sh %s' PKG_CONFIG_PATH='/opt/rh/llvm-toolset-7/root/usr/lib64/pkgconfig' INFOPATH='/opt/rh/devtoolset-7/root/usr/share/info' VERBOSE_LOGGING='true' COLORTERM='truecolor' 
+Inherited environment: MANPATH='/opt/rh/llvm-toolset-7/root/usr/share/man:/opt/rh/devtoolset-7/root/usr/share/man:' HOSTNAME='cc18ebd97d5f' TERM_PROGRAM='vscode' SHELL='/bin/bash' TERM='xterm-256color' AMD_ENTRYPOINT='vs/server/remoteExtensionHostProcess' PERL5LIB='/opt/rh/devtoolset-7/root//usr/lib64/perl5/vendor_perl:/opt/rh/devtoolset-7/root/usr/lib/perl5:/opt/rh/devtoolset-7/root//usr/share/perl5/vendor_perl' TERM_PROGRAM_VERSION='1.39.1' X_SCLS='llvm-toolset-7 devtoolset-7 ' PCP_DIR='/opt/rh/devtoolset-7/root' LS_COLORS='rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:' LD_LIBRARY_PATH='/opt/rh/llvm-toolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib:/opt/rh/devtoolset-7/root/usr/lib64/dyninst:/opt/rh/devtoolset-7/root/usr/lib/dyninst:/opt/rh/devtoolset-7/root/usr/lib64:/opt/rh/devtoolset-7/root/usr/lib' PATH='/opt/rh/llvm-toolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/sbin:/opt/rh/devtoolset-7/root/usr/bin:/root/.vscode-server/bin/88f15d17dca836346e787762685a40bb5cce75a8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' _='/usr/local/bin/meson' PWD='/Code/cse100_pa1/build' LANG='en_US.UTF-8' SHLVL='3' HOME='/root' PIPE_LOGGING='true' APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL='true' PYTHONPATH='/opt/rh/llvm-toolset-7/root/usr/lib/python2.7/site-packages:/opt/rh/devtoolset-7/root/usr/lib64/python2.7/site-packages:/opt/rh/devtoolset-7/root/usr/lib/python2.7/site-packages' CVS_RSH='ssh' VSCODE_IPC_HOOK_CLI='/tmp/vscode-ipc-9fcbf317-e5af-495c-894b-47e936ddaf38.sock' LESSOPEN='||/usr/bin/lesspipe.sh %s' PKG_CONFIG_PATH='/opt/rh/llvm-toolset-7/root/usr/lib64/pkgconfig' INFOPATH='/opt/rh/devtoolset-7/root/usr/share/info' VERBOSE_LOGGING='true' COLORTERM='truecolor' 
 
-1/5 my BSTNode test                         OK       0.17 s 
+1/5 my BSTNode test                         OK       0.24 s 
 
 --- command ---
 /Code/cse100_pa1/build/test/bst/test_BSTNode.cpp.executable
@@ -16,11 +16,11 @@ Running main() from ../subprojects/googletest-release-1.8.1/googletest/src/gtest
 [----------] 1 test from BST_NODE_TESTS (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test case ran. (1 ms total)
+[==========] 1 test from 1 test case ran. (3 ms total)
 [  PASSED  ] 1 test.
 -------
 
-2/5 my BSTIterator test                     OK       0.22 s 
+2/5 my BSTIterator test                     OK       0.18 s 
 
 --- command ---
 /Code/cse100_pa1/build/test/bst/test_BSTIterator.cpp.executable
@@ -38,7 +38,7 @@ Running main() from ../subprojects/googletest-release-1.8.1/googletest/src/gtest
 [  PASSED  ] 1 test.
 -------
 
-3/5 my BST test                             OK       0.23 s 
+3/5 my BST test                             OK       0.24 s 
 
 --- command ---
 /Code/cse100_pa1/build/test/bst/test_BST.cpp.executable
@@ -65,20 +65,20 @@ test:
 4
 50
 100
-[       OK ] SmallBSTFixture.SMALL_INSERT_DUPLICATES_TEST (0 ms)
+[       OK ] SmallBSTFixture.SMALL_INSERT_DUPLICATES_TEST (2 ms)
 [ RUN      ] SmallBSTFixture.INORDER_TEST
 [       OK ] SmallBSTFixture.INORDER_TEST (0 ms)
 [ RUN      ] SmallBSTFixture.FIRST_TEST
 Nulltest: 
 [       OK ] SmallBSTFixture.FIRST_TEST (0 ms)
-[----------] 4 tests from SmallBSTFixture (0 ms total)
+[----------] 4 tests from SmallBSTFixture (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 2 test cases ran. (1 ms total)
+[==========] 5 tests from 2 test cases ran. (4 ms total)
 [  PASSED  ] 5 tests.
 -------
 
-4/5 my Point test                           OK       0.31 s 
+4/5 my Point test                           OK       0.29 s 
 
 --- command ---
 /Code/cse100_pa1/build/test/kdt/test_Point.cpp.executable
@@ -98,7 +98,7 @@ Running main() from ../subprojects/googletest-release-1.8.1/googletest/src/gtest
 [  PASSED  ] 2 tests.
 -------
 
-5/5 my KDT test                             OK       0.30 s 
+5/5 my KDT test                             OK       0.36 s 
 
 --- command ---
 /Code/cse100_pa1/build/test/kdt/test_KDT.cpp.executable
@@ -108,31 +108,54 @@ Running main() from ../subprojects/googletest-release-1.8.1/googletest/src/gtest
 [----------] Global test environment set-up.
 [----------] 4 tests from SmallKDTFixture
 [ RUN      ] SmallKDTFixture.TEST_SIZE
-1
 2
-[       OK ] SmallKDTFixture.TEST_SIZE (4 ms)
+[       OK ] SmallKDTFixture.TEST_SIZE (6 ms)
 [ RUN      ] SmallKDTFixture.TEST_NEAREST_POINT
-1
 2
-[       OK ] SmallKDTFixture.TEST_NEAREST_POINT (0 ms)
-[ RUN      ] SmallKDTFixture.TIME_TEST
-1
+success!
+[       OK ] SmallKDTFixture.TEST_NEAREST_POINT (3 ms)
+[ RUN      ] SmallKDTFixture.RANGE_SEARCH
 2
-first
-3.2---5.7
-second
-3.2---3.2
-end
-[       OK ] SmallKDTFixture.TIME_TEST (0 ms)
+kdtree:(6.959838, 6.739365, 6.376402)(9.161951, 6.357117, 7.172969)(8.196773, 5.733186, 7.555808)(7.713577, 5.267450, 7.699138)
+naiveSearch:(6.959838, 6.739365, 6.376402)(7.713577, 5.267450, 7.699138)(8.196773, 5.733186, 7.555808)(9.161951, 6.357117, 7.172969)
+----------------------------------
+kdtree:(6.754760, 4.829503, 4.819358)
+naiveSearch:(6.754760, 4.829503, 4.819358)
+----------------------------------
+kdtree:(5.539700, 4.773971, 6.288709)(3.590954, 5.524850, 5.794300)(2.960316, 6.375523, 5.242872)(3.752070, 7.602487, 5.125354)
+naiveSearch:(2.960316, 6.375523, 5.242872)(3.590954, 5.524850, 5.794300)(3.752070, 7.602487, 5.125354)(5.539700, 4.773971, 6.288709)
+----------------------------------
+kdtree:(3.686635, 2.941604, 2.322615)(3.287770, 2.314280, 0.741610)
+naiveSearch:(3.287770, 2.314280, 0.741610)(3.686635, 2.941604, 2.322615)
+----------------------------------
+kdtree:(2.960316, 6.375523, 5.242872)(2.291370, 7.006200, 3.168671)
+naiveSearch:(2.291370, 7.006200, 3.168671)(2.960316, 6.375523, 5.242872)
+----------------------------------
+kdtree:(3.074579, 4.470336, 2.261066)(3.686635, 2.941604, 2.322615)
+naiveSearch:(3.074579, 4.470336, 2.261066)(3.686635, 2.941604, 2.322615)
+----------------------------------
+kdtree:(5.129324, 8.391122, 6.126398)(3.984367, 8.147669, 6.842185)(3.752070, 7.602487, 5.125354)
+naiveSearch:(3.752070, 7.602487, 5.125354)(3.984367, 8.147669, 6.842185)(5.129324, 8.391122, 6.126398)
+----------------------------------
+kdtree:(3.590954, 5.524850, 5.794300)
+naiveSearch:(3.590954, 5.524850, 5.794300)
+----------------------------------
+kdtree:(4.509176, 3.363511, 8.476844)(4.165013, 1.696071, 9.068039)(6.195965, 2.810594, 7.860021)(6.399788, 3.540487, 6.878614)(6.330722, 2.236564, 6.511321)
+naiveSearch:(4.165013, 1.696071, 9.068039)(4.509176, 3.363511, 8.476844)(6.195965, 2.810594, 7.860021)(6.330722, 2.236564, 6.511321)(6.399788, 3.540487, 6.878614)
+----------------------------------
+kdtree:(6.668803, 4.972585, 1.639680)(6.847565, 6.531303, 2.572655)
+naiveSearch:(6.668803, 4.972585, 1.639680)(6.847565, 6.531303, 2.572655)
+----------------------------------
+end!
+[       OK ] SmallKDTFixture.RANGE_SEARCH (51 ms)
 [ RUN      ] SmallKDTFixture.POINT_TEST
-1
 2
 (5.810000, 3.210000)
-[       OK ] SmallKDTFixture.POINT_TEST (1 ms)
-[----------] 4 tests from SmallKDTFixture (5 ms total)
+[       OK ] SmallKDTFixture.POINT_TEST (0 ms)
+[----------] 4 tests from SmallKDTFixture (60 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test case ran. (10 ms total)
+[==========] 4 tests from 1 test case ran. (62 ms total)
 [  PASSED  ] 4 tests.
 -------
 

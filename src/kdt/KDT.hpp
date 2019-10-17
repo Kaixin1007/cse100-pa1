@@ -179,55 +179,109 @@ class KDT {
         }
         return result;
     }
-    /** Extra credit */
+
     void rangeSearchHelper(KDNode* node, vector<pair<double, double>>& curBB,
                            vector<pair<double, double>>& queryRegion,
                            unsigned int curDim) {
         pair<double, double> cur_left, cur_right;
-        if (curBB[curDim].first > queryRegion[curDim].second ||
-            curBB[curDim].second < queryRegion[curDim].first) {
-            // disjoint
+
+        // if (curBB[curDim].first > queryRegion[curDim].second ||
+        //     curBB[curDim].second < queryRegion[curDim].first) {
+        //     // disjoint
+        //     return;
+
+        // } else {
+        // leaf point
+        if (node->left == nullptr && node->right == nullptr) {
+            if (checkNode(node->point, queryRegion))
+                pointsInRange.push_back(node->point);
             return;
-
-        } else {
-            // leaf point
-            if (node->left == nullptr && node->right == nullptr) {
-                if (checkNode(node->point, queryRegion))
-                    pointsInRange.push_back(node->point);
-                return;
-            }
-            // boundingBox is in the queryRegion
-            if (curBB[curDim].first >= queryRegion[curDim].first &&
-                curBB[curDim].second <= queryRegion[curDim].second) {
-                if (checkBox(curBB, queryRegion)) {
-                    getSubtree(node);
-                    return;
-                }
-                cur_left = cur_right = curBB[curDim];
-            } else {
-                // intersect
-                cur_left.first = curBB[curDim].first;
-                cur_left.second = cur_right.first =
-                    node->point.features[curDim];
-                cur_right.second = curBB[curDim].second;
-            }
-
+        }
+        // boundingBox is in the queryRegion
+        // if (curBB[curDim].first >= queryRegion[curDim].first &&
+        //     curBB[curDim].second <= queryRegion[curDim].second) {
+        //     if (checkBox(curBB, queryRegion)) {
+        //         getSubtree(node);
+        //         return;
+        //     }
+        //     cur_left = cur_right = curBB[curDim];
+        // } else {
+        // intersect
+        cur_left.first = curBB[curDim].first;
+        cur_left.second = cur_right.first = node->point.features[curDim];
+        cur_right.second = curBB[curDim].second;
+        // }
+        if (!(queryRegion[curDim].first > cur_left.second)) {
             if (node->left != nullptr) {
                 curBB[curDim] = cur_left;
                 rangeSearchHelper(node->left, curBB, queryRegion,
                                   (curDim + 1) % queryRegion.size());
             }
+        }
+
+        if (!(cur_right.first > queryRegion[curDim].second)) {
             if (node->right != nullptr) {
                 curBB[curDim] = cur_right;
                 rangeSearchHelper(node->right, curBB, queryRegion,
                                   (curDim + 1) % queryRegion.size());
             }
-            if (checkNode(node->point, queryRegion))
-                pointsInRange.push_back(node->point);
-            return;
         }
+
+        if (checkNode(node->point, queryRegion))
+            pointsInRange.push_back(node->point);
+        return;
+        // }
         return;
     }
+    // /** Extra credit */
+    // void rangeSearchHelper(KDNode* node, vector<pair<double, double>>& curBB,
+    //                        vector<pair<double, double>>& queryRegion,
+    //                        unsigned int curDim) {
+    //     pair<double, double> cur_left, cur_right;
+    //     if (curBB[curDim].first > queryRegion[curDim].second ||
+    //         curBB[curDim].second < queryRegion[curDim].first) {
+    //         // disjoint
+    //         return;
+
+    //     } else {
+    //         // leaf point
+    //         if (node->left == nullptr && node->right == nullptr) {
+    //             if (checkNode(node->point, queryRegion))
+    //                 pointsInRange.push_back(node->point);
+    //             return;
+    //         }
+    //         // boundingBox is in the queryRegion
+    //         if (curBB[curDim].first >= queryRegion[curDim].first &&
+    //             curBB[curDim].second <= queryRegion[curDim].second) {
+    //             if (checkBox(curBB, queryRegion)) {
+    //                 getSubtree(node);
+    //                 return;
+    //             }
+    //             cur_left = cur_right = curBB[curDim];
+    //         } else {
+    //             // intersect
+    //             cur_left.first = curBB[curDim].first;
+    //             cur_left.second = cur_right.first =
+    //                 node->point.features[curDim];
+    //             cur_right.second = curBB[curDim].second;
+    //         }
+
+    //         if (node->left != nullptr) {
+    //             curBB[curDim] = cur_left;
+    //             rangeSearchHelper(node->left, curBB, queryRegion,
+    //                               (curDim + 1) % queryRegion.size());
+    //         }
+    //         if (node->right != nullptr) {
+    //             curBB[curDim] = cur_right;
+    //             rangeSearchHelper(node->right, curBB, queryRegion,
+    //                               (curDim + 1) % queryRegion.size());
+    //         }
+    //         if (checkNode(node->point, queryRegion))
+    //             pointsInRange.push_back(node->point);
+    //         return;
+    //     }
+    //     return;
+    // }
     // check Node in queryRegion
     bool checkNode(Point node, vector<pair<double, double>>& queryRegion) {
         for (unsigned int i = 0; i < queryRegion.size(); i++) {
