@@ -31,18 +31,18 @@
             <td class="headerValue">Code coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">21</td>
             <td class="headerCovTableEntry">28</td>
-            <td class="headerCovTableEntry">28</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryMed">75.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-10-10 06:15:39</td>
+            <td class="headerValue">2019-10-17 02:33:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryHi">92.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">8</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryLo">69.2 %</td>
+            <td class="headerCovTableEntryLo">30.8 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -90,7 +90,7 @@
 <span class="lineNum">      12 </span>                :            : using namespace std;
 <a name="13"><span class="lineNum">      13 </span>                :            : </a>
 <span class="lineNum">      14 </span>                :            : /** The data point with given features **/
-<span class="lineNum">      15 </span>                :<span class="lineCov">        738 : class Point {</span>
+<span class="lineNum">      15 </span>                :<span class="lineCov">      86250 : class Point {</span>
 <span class="lineNum">      16 </span>                :            :   private:
 <span class="lineNum">      17 </span>                :            :     double DELTA = 0.00005;
 <span class="lineNum">      18 </span>                :            : 
@@ -104,11 +104,11 @@
 <span class="lineNum">      26 </span>                :            :     double distToQuery;
 <a name="27"><span class="lineNum">      27 </span>                :            : </a>
 <span class="lineNum">      28 </span>                :            :     /** Default constructor */
-<span class="lineNum">      29 </span>                :<span class="lineCov">         10 :     Point() {}</span>
+<span class="lineNum">      29 </span>                :<span class="lineCov">         14 :     Point() {}</span>
 <a name="30"><span class="lineNum">      30 </span>                :            : </a>
 <span class="lineNum">      31 </span>                :            :     /** Constructor that defines a data point with features and certain label */
-<span class="lineNum">      32 </span>                :<span class="lineCov">         30 :     Point(vector&lt;double&gt; features)</span>
-<span class="lineNum">      33 </span>                :<span class="lineCov">         30 :         : features(features), numDim((int)features.size()) {}</span>
+<span class="lineNum">      32 </span>                :<span class="lineCov">        630 :     Point(vector&lt;double&gt; features)</span>
+<span class="lineNum">      33 </span>                :<span class="lineCov">        630 :         : features(features), numDim((int)features.size()) {}</span>
 <a name="34"><span class="lineNum">      34 </span>                :            : </a>
 <span class="lineNum">      35 </span>                :            :     /** Set the square distance to the current query point */
 <span class="lineNum">      36 </span>                :<span class="lineCov">         22 :     void setDistToQuery(const Point&amp; queryPoint) {</span>
@@ -138,25 +138,25 @@
 <span class="lineNum">      60 </span>                :            : };
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
 <span class="lineNum">      62 </span>                :            : /** PLEASE DO NOT MODIFY THIS METHOD **/
-<span class="lineNum">      63 </span>                :<span class="lineCov">          1 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, const Point&amp; data) {</span>
-<span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     string s = &quot;(&quot;;</span>
-<span class="lineNum">      65 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :     for (unsigned int i = 0; i &lt; data.numDim - 1; i++) {</span>
-<span class="lineNum">      66 </span>[<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>][<span class="branchCov" title="Branch 5 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span>]:<span class="lineCov">          1 :         s += to_string(data.features[i]) + &quot;, &quot;;</span>
-<span class="lineNum">         </span>        [<span class="branchCov" title="Branch 8 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
+<span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, const Point&amp; data) {</span>
+<span class="lineNum">      64 </span>        [<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     string s = &quot;(&quot;;</span>
+<span class="lineNum">      65 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     for (unsigned int i = 0; i &lt; data.numDim - 1; i++) {</span>
+<span class="lineNum">      66 </span>[<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>][<span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span>]:<span class="lineNoCov">          0 :         s += to_string(data.features[i]) + &quot;, &quot;;</span>
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 8 was not executed"> # </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
 <span class="lineNum">      67 </span>                :            :     }
-<span class="lineNum">      68 </span>[<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>][<span class="branchCov" title="Branch 5 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span>]:<span class="lineCov">          1 :     s += to_string(data.features[data.numDim - 1]) + &quot;)&quot;;</span>
-<span class="lineNum">         </span>        [<span class="branchCov" title="Branch 8 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
-<span class="lineNum">      69 </span>        [<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">          1 :     out &lt;&lt; s;</span>
-<span class="lineNum">      70 </span>                :<span class="lineCov">          1 :     return out;</span>
+<span class="lineNum">      68 </span>[<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>][<span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span>]:<span class="lineNoCov">          0 :     s += to_string(data.features[data.numDim - 1]) + &quot;)&quot;;</span>
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 8 was not executed"> # </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
+<span class="lineNum">      69 </span>        [<span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span>]:<span class="lineNoCov">          0 :     out &lt;&lt; s;</span>
+<span class="lineNum">      70 </span>                :<span class="lineNoCov">          0 :     return out;</span>
 <span class="lineNum">      71 </span>                :            : }
 <span class="lineNum">      72 </span>                :            : 
 <span class="lineNum">      73 </span>                :            : /** The comparator used in sorting points based on values on
 <span class="lineNum">      74 </span>                :            :     certain dimension */
 <a name="75"><span class="lineNum">      75 </span>                :            : struct CompareValueAt {</a>
 <a name="76"><span class="lineNum">      76 </span>                :            :     int dimension;</a>
-<span class="lineNum">      77 </span>                :<span class="lineCov">         12 :     CompareValueAt(int dimension) { this-&gt;dimension = dimension; }</span>
-<span class="lineNum">      78 </span>                :<span class="lineCov">         56 :     bool operator()(const Point&amp; p1, const Point&amp; p2) {</span>
-<span class="lineNum">      79 </span>                :<span class="lineCov">         56 :         return p1.features[dimension] &lt; p2.features[dimension];</span>
+<span class="lineNum">      77 </span>                :<span class="lineCov">         75 :     CompareValueAt(int dimension) { this-&gt;dimension = dimension; }</span>
+<span class="lineNum">      78 </span>                :<span class="lineCov">       2617 :     bool operator()(const Point&amp; p1, const Point&amp; p2) {</span>
+<span class="lineNum">      79 </span>                :<span class="lineCov">       2617 :         return p1.features[dimension] &lt; p2.features[dimension];</span>
 <span class="lineNum">      80 </span>                :            :     }
 <span class="lineNum">      81 </span>                :            : };
 <span class="lineNum">      82 </span>                :            : 

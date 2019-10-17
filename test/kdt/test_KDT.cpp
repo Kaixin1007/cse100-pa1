@@ -104,7 +104,7 @@ TEST_F(SmallKDTFixture, TEST_NEAREST_POINT) {
     vector<Point> range0 = naiveSearch.rangeSearch(point);
     vector<Point> range1 = kdt.rangeSearch(point);
     // ASSERT_EQ(range0, range1);
-    cout << "success!" << endl;
+  
 }
 TEST_F(SmallKDTFixture, RANGE_SEARCH) {
     const int NUM_DATA = 100;    // number of random Build data
@@ -147,5 +147,5 @@ TEST_F(SmallKDTFixture, POINT_TEST) {
     ASSERT_EQ(queryPoint1.valueAt(0), 5.81);
     ASSERT_EQ(queryPoint1 == queryPoint2, true);
     ASSERT_EQ(queryPoint1 != queryPoint3, true);
-    cout << queryPoint1 << endl;
+    
 }
